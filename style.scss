@@ -1,0 +1,337 @@
+
+* {
+    box-sizing: border-box;
+}
+ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
+ pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
+ small, strike, strong, sub, sup, tt, var, b, u, i, center,
+ dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot,
+ thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer,
+ header, hgroup, menu, nav, output, ruby, section, summary,
+ time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+display: block;
+}
+      
+ol, ul {
+list-style: none;
+}
+blockquote, q {
+ quotes: none;
+}
+      
+blockquote:before, blockquote:after, q:before, q:after {
+content: '';
+content: none;
+}
+      
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+
+
+/********font sizes*****/
+h1, .h1 {
+    font-size: 2rem;
+}
+h2, .h2 {
+    font-size: 1rem;
+}
+h3, .h3 {
+    font-size: 0.75rem;
+}
+
+$bg-primary: #F2F6FF;
+$white: #ffff;
+$light-blue: #4285F4;
+$default-blue: #004bff;
+$dark-blue:#164AC6;
+$gray: #939ec5;
+
+body {
+    background-color: $gray;
+    font-family: 'Merriweather', serif;
+    text-align: center;
+}
+a {
+    text-decoration: none;
+    color: $default-blue;
+}
+             /********utility classes******/
+.p-1 {
+    padding: 1rem;
+}
+.px-2 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+}
+.py-2 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.mx-10 {
+    margin-left: 10rem;
+    margin-right: 10rem;
+}
+.grid {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.border {
+border-radius: 5px;
+border: 1px solid $light-blue;
+}
+.align-left {
+align-self: flex-start;
+}
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    gap: 1rem;
+            }
+.grey {
+    color: $gray;
+}
+            /*********card style*********/
+.container {
+    margin: 0 auto;
+    transform: translateY(50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    max-width: 900px;
+    .container-card {
+        /*display: flex;
+        flex-direction: column;
+        align-content: center;
+        gap: 1rem;*/
+        max-width: 600px;
+        background-color: $white;
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+        text-align: center;
+        align-self: stretch;
+    }
+    .container-image {
+        flex-grow: 1.5;
+        .card-image {
+        object-fit: cover;
+        height: 610px;
+        width: 100%;
+    }}
+}
+.header-btn {
+    border: 1px solid $light-blue;
+    border-radius: 24px;
+    background-color: $white;
+    padding: 16px 60px;
+    font-size: 18px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.form {
+    /*display: flex;
+    flex-direction: column;
+    align-content: center;
+    gap: 1rem;*/
+    width: 100%;
+    margin: 0, auto;
+    .form-btn {
+        border-radius: 24px;
+        padding: 16px 60px;
+        font-size: 18px;
+        color: white;
+        background-color: $default-blue;
+        cursor: pointer;
+    }
+}
+.card-main {
+    /*align-content: center;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    gap: 1rem;*/
+    .card-line {
+        width: 30%;
+}   
+}
+.checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+/* Hide the browser's default checkbox */
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  /* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    height: 16px;
+    width: 16px;
+    background-color: $white;
+    border: 1px solid $gray;
+  }
+  /* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  /* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  /* Style the checkmark/indicator */
+.checkbox-container {
+    .checkmark:after {
+    left: 5px;
+    top: 0;
+    width: 5px;
+    height: 10px;
+    border: 1px solid $dark-blue;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
+/********effects*******/
+
+/*******hover*****/
+
+.card-header :hover {
+    background-color: $bg-primary;
+}
+.form input[type="submit"]:hover{
+    background:$dark-blue;
+    color:rgb(255, 255, 255);
+    }
+.form input[type="text"]:hover {
+    background-color: #F2F6FF;
+}
+.checkbox-container:hover input ~ .checkmark {
+    background-color: $white;
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+}
+a:hover {
+    text-decoration: underline;
+}
+   /******focus******/
+.card-header :focus{
+    border: 3px solid $dark-blue;
+}
+.form input[type="submit"]:focus{
+    background: $default-blue;
+    color:rgb(255, 255, 255);
+    }
+.form input[type="text"]:focus {
+    outline: none;
+    border: 3px solid $dark-blue;
+}
+.checkbox-container:focus input ~ .checkmark {
+    background-color: $white;
+    box-shadow: 0 0 5px rgb(8, 5, 161);
+    border: 3px solid $dark-blue;
+}
+/****.form input[type="checkbox"]:focus{
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    padding: 3px 0px 3px 3px;
+    margin: 5px 1px 3px 0px;
+    border: 3px solid $dark-blue;
+}*******/
+a:focus {
+    border: 2px solid $dark-blue;
+}
+
+/*******active*******/
+
+.card-header :active{
+    border: 3px solid $dark-blue;
+    color: $white;
+    background-color: $dark-blue;
+}
+.form input[type="submit"]:active{
+    background: $dark-blue;
+    color:rgb(255, 255, 255);
+    }
+.form input[type="text"]:active {
+    outline: none;
+    border: 3px solid $dark-blue;
+    background-color: #F2F6FF;
+}
+.checkbox-container:active input ~ .checkmark {
+    background-color: $white;
+    box-shadow: 0 0 5px rgb(8, 5, 161);
+    border: 3px solid $dark-blue;
+}
+     /*******.form input[type="checkbox"]:active{
+    box-shadow: 0 0 5px rgb(11, 35, 141);
+    padding: 3px 0px 3px 3px;
+    margin: 5px 1px 3px 0px;
+    border: 3px solid $dark-blue;}*********/
+
+
+a:active {
+    text-decoration: underline;
+}
+
+
+/*******for iPad pro 11*** 834px × 1194px viewport ****/
+
+
+/*****@media only screen and (max-width: 1194px) and (min-width:361px){
+     
+}*********/
+
+/*********Android Large default   360px width*******/
+
+
+@media only screen and (max-width: 420px){
+            
+    .container {
+        margin: 0;
+        flex-direction: column-reverse;
+        .container-card {
+            border-top-right-radius: 100px;
+            padding-top: 7rem;
+            .card-title {
+                padding-bottom: 3rem;
+            }
+        }
+        .container-image {
+            align-self: unset;
+            height: 201px;
+        }
+    }
+}
+
+
+
+
